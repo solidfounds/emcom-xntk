@@ -19,7 +19,7 @@
 <h1>Order {{ order.id }}</h1>
     <ul class="object-tools">
         <li>
-            <a href="#" onclick="window.print();">Print order</a>
+            <a href="#" onclick="window.print();">Imprimir Orden</a>
         </li>
     </ul>
     <table>
@@ -29,7 +29,7 @@
         </tr>
         <tr>
             <th>Customer</th>
-            <td>{{ order.first_name }} {{ order.last_name }}</td>
+            <td>{{ order.nombre }} {{ order.apellidos }}</td>
         </tr>
         <tr>
             <th>E-mail</th>
@@ -63,14 +63,14 @@
                 <tbody>
                     {% for item in order.items.all %}
                         <tr class="row{% cycle "1" "2" %}">
-                            <td>{{ item.product.name }}</td>
-                            <td class="num">${{ item.price  }}</td>
-                            <td class="num">{{ item.quantity }}</td>
+                            <td>{{ item.product.nombre }}</td>
+                            <td class="num">${{ item.precio }}</td>
+                            <td class="num">{{ item.cantidad }}</td>
                             <td class="num">${{ item.get_cost }}</td>
                         </tr>
                     {% endfor %}
                     <tr class="total">
-                        <td colspan="3">Total</td>
+                        <td colspan="3">Total:</td>
                         <td class="num">${{ order.get_total_cost }}</td>
                     </tr>
                 </tbody>

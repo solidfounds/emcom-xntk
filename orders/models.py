@@ -1,5 +1,8 @@
 from django.db import models
 from shop.models import Producto
+from decimal import Decimal
+from django.core.validators import MinValueValidator, MaxValueValidator
+from coupons.models import Coupon
 # Create your models here.
 
 class Orden(models.Model):
@@ -12,6 +15,8 @@ class Orden(models.Model):
     creado = models.DateTimeField(auto_now_add=True)
     actualizado = models.DateTimeField(auto_now=True)
     pagado = models.BooleanField(default=False)
+    cupon = models.ForeignKey(Coupon, related_name='orders', null=True, blank=True)
+    decuento = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
 
     class Meta:
         ordering = ('-creado',)
@@ -20,7 +25,8 @@ class Orden(models.Model):
         return 'Orden {}'.format(self.id)
 
     def get_total_cost(self):
-        return sum(item.get_cost() for item in self.items.all())
+        total_cost = sum(item.get_cost() for item in self.items.all())
+        return total_cost - total_cost * (self.decuento / Decimal('100'))
 
 class OrderItem(models.Model):
     orden = models.ForeignKey(Orden, related_name='items')

@@ -1507,6 +1507,16 @@ a.cpns{
 	font-size: 0.8em;
 	font-weight:600;
 }
+.cpns{
+	background:#ed645c;
+	color:#fff;
+	padding: 10px;
+	font-size: 0.8em;
+	font-weight:600;
+}
+.cpns:hover{
+	background:#204056;
+}
 a.cpns:hover{
 	background:#204056;
 }
