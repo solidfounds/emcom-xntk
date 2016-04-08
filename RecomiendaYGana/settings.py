@@ -29,17 +29,23 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django.contrib.sites',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'disqus',
     'shop',
     'cart',
     'orders',
     'paypal.standard.ipn',
     'payment',
     'coupons',
+
+
+    #tirt parties
+
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -134,3 +140,7 @@ PAYPAL_TEST = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 STATIC_ROOT =os.path.join(BASE_DIR, 'static/')
+
+
+DISQUS_API_KEY = 'p7oKQ2Z9yGc8sCtcof4IM2hqsOCoMtbu9BONqi1W7kxPdjyWLRY9ezwUXWtxyXSN'
+DISQUS_WEBSITE_SHORTNAME = 'SeRentaTodo'
