@@ -87,10 +87,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RecomiendaYGana/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2810903">
+            <state vertical-scroll-proportion="0.0">
               <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
               <folding />
             </state>
@@ -107,12 +107,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detalle.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="detalle.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shop/templates/shop/producto/detalle.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.375">
-              <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
-              <folding />
+            <state vertical-scroll-proportion="-1.2912966">
+              <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+              <folding>
+                <element signature="e#89#1923#0#HTML" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -184,8 +186,8 @@
         <option value="$PROJECT_DIR$/shop/views.py" />
         <option value="$PROJECT_DIR$/RecomiendaYGana/urls.py" />
         <option value="$PROJECT_DIR$/shop/templates/base.html" />
-        <option value="$PROJECT_DIR$/shop/templates/shop/producto/detalle.html" />
         <option value="$PROJECT_DIR$/RecomiendaYGana/settings.py" />
+        <option value="$PROJECT_DIR$/shop/templates/shop/producto/detalle.html" />
       </list>
     </option>
   </component>
@@ -1085,19 +1087,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shop/templates/shop/producto/detalle.html">
+    <entry file="file://$PROJECT_DIR$/RecomiendaYGana/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.375">
-          <caret line="59" column="50" selection-start-line="59" selection-start-column="50" selection-end-line="59" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RecomiendaYGana/settings.py">
+    <entry file="file://$PROJECT_DIR$/shop/templates/shop/producto/detalle.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2810903">
-          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
-          <folding />
+        <state vertical-scroll-proportion="-1.2912966">
+          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+          <folding>
+            <element signature="e#89#1923#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
