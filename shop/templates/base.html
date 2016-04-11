@@ -80,7 +80,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li class="grid"><a href="#">Accesorios</a></li>
 					<li class="grid"><a href="typo.html">Blog</a></li>
                     <li class="grid">
-                        ################################################################## buscar
                         <form role="search" action="/s">
                             <div>
                                 <label>
@@ -89,7 +88,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </label>
                             </div>
 				        </form>
-                        ################################################################## buscar
                     </li>
 				</ul>
 			 </div>
@@ -102,7 +100,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             ${{ cart.get_total_price }}
 					        <div class="total">
 					        ({{ total_items }})</div>
-
 				        </a>
 
                         {% else %}
@@ -116,6 +113,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </p>
 			 	<div class="clearfix"> </div>
 			 </div>
+         <!-- inicio comparar -->
+             <div class="cart box_1">
+                 {% with total_items=comparar|length %}
+                        {% if cart|length > 0 %}
+                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                        <a href="{% url "cart:ccart_detail" %}">
+                            ${{ comparar.get_total_price }}
+					        <div class="total">
+					        ({{ total_items }})</div>
+				        </a>
+
+                        {% else %}
+                        Tu carrito esta vacio.
+                        {% endif %}
+                    {% endwith %}
+			 	<div class="clearfix"> </div>
+			 </div>
+         <!-- fin carro -->
 			 <div class="clearfix"> </div>
 			 <!---->
 			 </div>
@@ -130,43 +145,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
          {% endblock %}
 	 </div>
 </div>
-<!--
-<div class="offers">
-	 <div class="container">
-	 <h3>Termia la temporada de descuentos</h3>
-	 <div class="offer-grids">
-		 <div class="col-md-6 grid-left">
-			 <a href="#"><div class="offer-grid1">
-				 <div class="ofr-pic">
-					 <img src="images/ofr2.jpeg" class="img-responsive" alt=""/>
-				 </div>
-				 <div class="ofr-pic-info">
-					 <h4>Emergency Lights <br>& Led Bulds</h4>
-					 <span>UP TO 60% OFF</span>
-					 <p>Shop Now</p>
-				 </div>
-				 <div class="clearfix"></div>
-			 </div></a>
-		 </div>
-		 <div class="col-md-6 grid-right">
-			 <a href="#"><div class="offer-grid2">
-				 <div class="ofr-pic-info2">
-					 <h4>Flat Discount</h4>
-					 <span>UP TO 30% OFF</span>
-					 <h5>Outdoor Gate Lights</h5>
-					 <p>Shop Now</p>
-				 </div>
-				 <div class="ofr-pic2">
-					 <img src="images/ofr3.jpg" class="img-responsive" alt=""/>
-				 </div>
-				 <div class="clearfix"></div>
-			 </div></a>
-		 </div>
-		 <div class="clearfix"></div>
-	 </div>
-	 </div>
-</div>
--->
 <div class="subscribe">
 	 <div class="container">
 		 <h3>Newsletter</h3>
