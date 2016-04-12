@@ -8,7 +8,7 @@ urlpatterns = [
 
 
     #comparar
-    url(r'^c/', views.ccart_detail, name='ccart_detail'),
+    url(r'^comparar/', views.ccart_detail, name='ccart_detail'),
     url(r'^cadd/(?P<product_id>\d+)/$',views.ccart_add,name='ccart_add'),
     url(r'^cremove/(?P<product_id>\d+)/$',views.ccart_remove,name='ccart_remove'),
 ]

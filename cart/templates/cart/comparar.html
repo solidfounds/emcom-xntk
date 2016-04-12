@@ -4,56 +4,16 @@
 Tu carito de compras
 {% endblock %}
 {% block contenido %}
-    <h1>Copmparador/h1>
+    <h1>Comparador</h1>
 
     <div class="check-sec">
-		<div class="col-md-3 cart-total">
-			   <a href="{% url "shop:product_list" %}" class="continue">Continuar comprando</a>
-			<div class="price-details">
-				<h3>Detalle de la Compra</h3>
-				<span>Total</span>
-				<span class="total1">${{ cart.get_total_price }}</span>
-{#				<span>Descuento</span>#}
-{#				<span class="total1">10%</span>#}
-				<div class="clearfix"></div>
-			</div>
-            {% if cart.coupon %}
-                <ul class="total_price">
-			        <li class="last_price"> <h4>TOTAL</h4></li>
-			        <li class="last_price"><span>${{ cart.get_total_price }}</span></li>
-			    </ul>
-                <ul class="total_price">
-
-                </ul>
-                <ul class="total_price">
-                    <li class="last_price"><h4>"</h4></li>
-                    <li class="last_price"> <span>-{{ cart.get_discount|floatformat:"2" }}</span> </li>
-                </ul>
-            {% endif %}
-                <ul class="total_price">
-                    <li class="last_price"><h4>Total</h4></li>
-                    <li class="last_price"> <span>${{ cart.get_total_price_after_discount|floatformat:"2" }}</span> </li>
-                </ul>
-			<div class="clearfix"></div>
-			<div class="clearfix"></div>
-			<a class="order" href="{% url "orders:order_create" %}">Pagar</a>
-			<div class="total-item">
-				<h4>CUPONES</h4>
-                    <form action="{% url "coupons:apply" %}" method="post">
-                        {% csrf_token %}
-                        {{ coupon_form }}
-                        <input type="submit" class="cpns" value="Cambiar cupon">
-                    </form>
-			</div>
-		</div>
 		<div class="col-md-9 cart-items">
 			<h1>Productos</h1>
 
 			<div class="cart-header">
-				<div class="close1"> </div>
-                {% for item in cart %}
+
+                {% for item in comparar %}
                     {% with product=item.product %}
-                        <div class="cart-sec simpleCart_shelfItem">
                             <div class="cart-item cyc">
                                 <img src="{{ product.imagen.url}}">
 						    </div>
@@ -63,19 +23,6 @@ Tu carito de compras
 								    <li>
                                         <p>Precio :{{ item.price }}</p>
                                     </li>
-								    <li>
-                                        <p>Cantidad :
-                                            <form action="{% url "cart:cart_add" product.id %}" method="post">
-                                                {% csrf_token %}
-                                                {{ item.update_quantity_form.quantity }}
-                                                {{ item.update_quantity_form.update }}
-                                                <input type="submit" class="order" value="Actualizar">
-                                            </form>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p>Total : {{ item.total_price }} </p>
-                                    </li>
                                     <li><p><a href="{% url "cart:cart_remove" product.id%}">Eiminar</a> </p></li>
 							    </ul>
 							    <div class="delivery">
@@ -84,12 +31,12 @@ Tu carito de compras
 								    <div class="clearfix"></div>
 							    </div>
 					        </div>
-                        </div>
                     {% endwith %}
                 {% endfor %}
-			 </div>
+            </div>
 
 		</div>
 		<div class="clearfix"> </div>
 	</div>
+
 {% endblock %}

@@ -42,7 +42,7 @@ def cart_detail(request):
 def ccart_add(request, product_id):
     comparar = Comparar(request)
     product = get_object_or_404(Producto, id=product_id)
-    form = CartAddProductForm(request.POST)
+    form = CompararAddProductForm(request.POST)
     if form.is_valid():
         cd = form.cleaned_data
         comparar.add(product=product,

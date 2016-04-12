@@ -77,7 +77,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 					</li>
-					<li class="grid"><a href="#">Accesorios</a></li>
+					<li class="grid"><a href="{% url "shop:productos_lista" %}">Mas Productos</a></li>
 					<li class="grid"><a href="typo.html">Blog</a></li>
                     <li class="grid">
                         <form role="search" action="/s">
@@ -117,9 +117,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
              <div class="cart box_1">
                  {% with total_items=comparar|length %}
                         {% if cart|length > 0 %}
-                            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                            <span class="glyphicon fa fa-compress" aria-hidden="true"></span>
                         <a href="{% url "cart:ccart_detail" %}">
-                            ${{ comparar.get_total_price }}
+                            Mi comparador
 					        <div class="total">
 					        ({{ total_items }})</div>
 				        </a>

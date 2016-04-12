@@ -23,6 +23,7 @@ class Categoria(models.Model):
 class Producto(models.Model):
     categoria = models.ForeignKey(Categoria, related_name='productos')
     nombre = models.CharField(max_length=200, db_index=True)
+    marca = models.CharField(max_length=150, default='vacia')
     slug = models.SlugField(max_length=200, db_index=True)
     imagen = models.ImageField(upload_to='products/%Y/%m/%d',blank=True)
     imagen2 = models.ImageField(upload_to='products/%Y/%m/%d',blank=True)

@@ -129,6 +129,12 @@
                                 {{ cart_product_form }}
                                 <input type="submit" class="add-cart item_add" value="agregar al carrito">
                             </form>
+
+                            <form action="{% url "cart:ccart_add" producto.id %}" method="post">
+                                {% csrf_token %}
+                                {{ comparate_product_form }}
+                                <input type="submit" value="comparar">
+                            </form>
 					 </div>
 				 </div>
 				 <div class="clearfix"> </div>
